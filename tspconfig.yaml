@@ -1,10 +1,16 @@
 emit:
   - "@typespec/openapi3"
-  - "@typespec/http-client-js"
+  - "@typespec/json-schema"
+  
+
 options:
   "@typespec/openapi3":
-    emitter-output-dir: "{output-dir}/schema"
+    emitter-output-dir: "{output-dir}/openapi"
     openapi-versions:
       - 3.0.0
-  "@typespec/http-client-js":
-    emitter-output-dir: "{output-dir}/clients/js"
+  "@typespec/json-schema":
+    emitter-output-dir: "{output-dir}/json-schema"
+
+linter:
+  extends:
+    - "@typespec/http/all"
